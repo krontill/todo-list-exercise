@@ -16,6 +16,7 @@ export const Panel = styled.div`
   max-width: 320px;
   display: flex;
   justify-content: space-between;
+  grid-gap: 16px;
 
   @media (min-width: 769px) {
     max-width: 540px;

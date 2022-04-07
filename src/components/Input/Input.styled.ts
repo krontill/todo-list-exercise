@@ -5,6 +5,7 @@ export const StyledInput = styled.input`
   border-radius: 4px;
   border: 2px solid #c6c6c6;
   outline: none;
+  width: 100%;
 
   ::placeholder {
     color: #6c6c6c;
@@ -12,9 +13,5 @@ export const StyledInput = styled.input`
 
   &:focus {
     border-color: #7e55e8;
-  }
-
-  @media (min-width: 769px) {
-    width: 75%;
   }
 `;

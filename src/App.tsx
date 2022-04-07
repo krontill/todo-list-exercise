@@ -15,6 +15,7 @@ const initialInputValue = '';
 export const App = () => {
   const [state, setState] = React.useState<ListItemType[]>(initialState);
   const [inputValue, onChangeInput] = React.useState(initialInputValue);
+  const [searchQuery, setSearch] = React.useState('');
 
   React.useEffect(() => {
     localStorage.setItem(keyStorage, JSON.stringify(state));
@@ -43,18 +44,24 @@ export const App = () => {
     [state]
   );
 
+  const filteredItems = state.filter((item) => item.text.includes(searchQuery));
+
   return (
     <Wrapper>
       <Panel>
-        <Input onChange={onChangeInput} value={inputValue} />
+        <Input onChange={onChangeInput} value={inputValue} placeholder="Task to be done..." />
         <Button onClick={addNewItem} text="Add" />
+      </Panel>
+      <Panel>
+        <Input onChange={setSearch} value={searchQuery} placeholder="Search" />
       </Panel>
       {state.length === 0 ? null : (
         <Panel>
           <StyledUl>
-            {state.map((item) => (
+            {filteredItems.map((item) => (
               <ListItem item={item} markItem={markItem} key={item.id} removeItem={removeItem} />
             ))}
+            {filteredItems.length === 0 ? 'Item not found' : null}
           </StyledUl>
         </Panel>
       )}
