@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders correctly 1`] = `
+<input
+  className="sc-bczRLJ gQMCS"
+  onChange={[Function]}
+  placeholder="Task to be done..."
+  type="text"
+  value="Test value"
+/>
+`;

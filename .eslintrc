@@ -25,6 +25,7 @@
     "tsconfig.json",
     "*.md",
     "*.gif",
-    "*.png"
+    "*.png",
+    "*.snap"
   ]
 }

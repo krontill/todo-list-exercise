@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<main
+  className="sc-hKMtZM bBoNre"
+>
+  <div
+    className="sc-eCYdqJ drlZEZ"
+  >
+    <input
+      className="sc-gKXOVf iLmtHu"
+      onChange={[Function]}
+      placeholder="Task to be done..."
+      type="text"
+      value=""
+    />
+    <button
+      className="sc-dkzDqf kbhekf"
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </div>
+  <div
+    className="sc-eCYdqJ drlZEZ"
+  >
+    <input
+      className="sc-gKXOVf iLmtHu"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+      value=""
+    />
+  </div>
+</main>
+`;
