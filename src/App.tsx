@@ -25,8 +25,14 @@ export const App = () => {
 
   const markItem = React.useCallback(
     (id: string) => {
-      const newState = state.map((item) => (item.id === id ? { ...item, isDone: !item.isDone } : item));
-      setState(newState);
+      setState(state.map((item) => (item.id === id ? { ...item, isDone: !item.isDone } : item)));
+    },
+    [state]
+  );
+
+  const removeItem = React.useCallback(
+    (id: string) => {
+      setState(state.filter((item) => item.id !== id));
     },
     [state]
   );
@@ -41,7 +47,7 @@ export const App = () => {
         <Panel>
           <StyledUl>
             {state.map((item) => (
-              <ListItem item={item} onClick={markItem} key={item.id} />
+              <ListItem item={item} markItem={markItem} key={item.id} removeItem={removeItem} />
             ))}
           </StyledUl>
         </Panel>

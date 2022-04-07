@@ -4,6 +4,9 @@ export const Item = styled.li`
   list-style: none;
   padding: 4px 8px;
   border-bottom: 2px solid #c6c6c6;
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
 `;
 
 interface Text {
