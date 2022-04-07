@@ -7,12 +7,18 @@ import { Input } from './components/Input/Input';
 import { Button } from './components/Button/Button';
 import { ListItemType } from './types/ListItem';
 
-const initialState: ListItemType[] = [];
+const keyStorage = 'todo-list';
+const savedTodoList = localStorage.getItem(keyStorage);
+const initialState: ListItemType[] = savedTodoList === null ? [] : JSON.parse(savedTodoList);
 const initialInputValue = '';
 
 export const App = () => {
   const [state, setState] = React.useState<ListItemType[]>(initialState);
   const [inputValue, onChangeInput] = React.useState(initialInputValue);
+
+  React.useEffect(() => {
+    localStorage.setItem(keyStorage, JSON.stringify(state));
+  }, [state]);
 
   const addNewItem = React.useCallback(() => {
     if (inputValue.trim() === '') return;
