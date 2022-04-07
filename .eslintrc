@@ -16,5 +16,15 @@
     ],
     "prettier/prettier": "error"
   },
-  "ignorePatterns": ["src/**/*.test.ts", "dist", "yarn.lock", "webpack.config.js", "package.json", "tsconfig.json"]
+  "ignorePatterns": [
+    "src/**/*.test.ts",
+    "dist",
+    "yarn.lock",
+    "webpack.config.js",
+    "package.json",
+    "tsconfig.json",
+    "*.md",
+    "*.gif",
+    "*.png"
+  ]
 }
